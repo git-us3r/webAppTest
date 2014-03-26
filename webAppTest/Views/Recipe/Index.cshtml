@@ -1,0 +1,60 @@
+﻿@*
+
+View for the Recipe controller.
+This view was added by context menu from the RecipeController.cs file.
+Hence, it is the view associated with that controller.
+
+*@
+
+@* Load Models *@
+
+@model IEnumerable<webAppTest.Models.Recipe> 
+@{ Html.RenderPartial("PagingPartial", Model); }
+
+
+@{
+    ViewBag.Title = "Page Title";
+}
+
+@* Default source: this view is empty, only styling is displaying. *@
+
+
+
+
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MainIngredients)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MainIngredients)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+        </tr>
+    }
+</table>
+
+
